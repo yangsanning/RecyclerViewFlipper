@@ -52,7 +52,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyHolder> {
 
     @Override
     public int getItemCount() {
-        return Integer.MAX_VALUE;
+        return data == null ? 0 : data.size();
     }
 
     static class MyHolder extends RecyclerView.ViewHolder {

@@ -2,10 +2,10 @@ package ysn.com.recyclerviewflipper;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
 
 import java.util.ArrayList;
 
+import ysn.com.recyclerviewflipper.LayoutManager.LooperLayoutManager;
 import ysn.com.recyclerviewflipper.adapter.MyAdapter;
 import ysn.com.recyclerviewflipper.view.RecyclerViewFlipper;
 
@@ -16,9 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         RecyclerViewFlipper recyclerViewFlipper = findViewById(R.id.main_activity_recycler_view_flipper);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        recyclerViewFlipper.setLayoutManager(layoutManager);
+        recyclerViewFlipper.setLayoutManager(new LooperLayoutManager());
         recyclerViewFlipper.setAdapter(new MyAdapter(getData(), this));
     }
 
